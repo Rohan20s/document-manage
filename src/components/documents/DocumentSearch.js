@@ -3,6 +3,7 @@ import { documentAPI } from '../../services/api';
 import { toast } from 'react-hot-toast';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from 'react-router-dom';
 
 const DocumentSearch = () => {
   const [documents, setDocuments] = useState([]);
@@ -95,8 +96,19 @@ const DocumentSearch = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-8 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-8 text-gray-800">Search Documents</h2>
+    <div className="max-w-7xl mx-auto p-8 bg-white rounded-lg shadow-lg my-4 py-4">
+      <div className="flex justify-between items-center mb-8">
+        <h2 className="text-2xl font-bold text-gray-800">Search Documents</h2>
+        <Link 
+          to="/documents/upload" 
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          Upload Document
+        </Link>
+      </div>
       
       <form onSubmit={handleSearch} className="space-y-6 mb-8 bg-gray-50 p-6 rounded-lg border border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

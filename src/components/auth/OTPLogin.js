@@ -85,7 +85,7 @@ const OTPLogin = () => {
         };
         login(userData, response.data.data.token);
         toast.success('Login successful!');
-        navigate('/documents');
+        navigate('/documents/search');
       } else {
         toast.error(response.data.data || 'Invalid OTP');
       }
